@@ -5,7 +5,34 @@
   <App id="idAppControl" >
     <pages>
       <Page title="{i18n>title}">
-        <content></content>
+        <content>
+			<IconTabBar
+			id="idIconTabBar"
+			select=".onFilterSelect"
+			class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter
+						icon="sap-icon://begin"
+						iconColor="Positive"
+						text="Ok"
+						key="Ok" />
+					<IconTabFilter
+						icon="sap-icon://inventory"
+						iconColor="Negative"
+						text="Sem estoque"
+						key="NoStock" />
+				</items>
+				<content>
+					<List id="idProductsList" items="{/Products}">
+						<ObjectListItem
+							title="{ProductName}"
+							type="Active"
+							number="{UnitsInStock}">
+						</ObjectListItem>
+					</List>
+				</content>
+			</IconTabBar>
+    	</content>
       </Page>
     </pages>
   </App>
